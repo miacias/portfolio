@@ -45,15 +45,19 @@ export default function Repos() {
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
-                        return (<div className="repo-list-item">
+                        return (
+                        <div className="repo-list-item">
                             <a href={repo.url} className="repo-link">
                                 <div className="repo-background"></div>
                                 <div className="repo-title">{repo.name}</div>
                                 <div className='repo-date-box'>
-                                    <div className="repo-date">{formatDate(repo.created_at)}</div>
+                                    <div className="repo-date-box">
+                                        <span className="repo-date">{formatDate(repo.created_at)}</span>
+                                    </div>
                                 </div>
                             </a>
-                        </div>)
+                        </div>
+                        )
                     })}
                 </div>
             </div>

@@ -19,6 +19,10 @@
     margin: 0 auto;
 }
 
+body {
+    background-color: #000;
+  }
+
 .repo-box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -47,16 +51,16 @@
     position: relative;
 }
 
-.repo-link:hover {
+.repo-link:hover,
+.repo-link:hover .repo-date {
     text-decoration: none;
     color: #FFF;
 }
 
-.repo-list-item:hover,
-.repo-background {
-    /* -webkit-transform: scale(2); */
-    /* -ms-transform: scale(2); */
-    transform: scale(2);
+.repo-list-item:hover .repo-background {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
 }
 
 .repo-title {
@@ -99,28 +103,23 @@
     transition: all .5s ease;
 }
 
-.repo-list-item:nth-child(2n),
-.repo-background {
+.repo-list-item:nth-child(2n) .repo-background {
     background-color: #3ecd5e;
 }
 
-.repo-list-item:nth-child(3n),
-.repo-background {
+.repo-list-item:nth-child(3n) .repo-background {
     background-color: #e44002;
 }
 
-.repo-list-item:nth-child(4n),
-.repo-background {
+.repo-list-item:nth-child(4n) .repo-background {
     background-color: #952aff;
 }
 
-.repo-list-item:nth-child(5n),
-.repo-background {
+.repo-list-item:nth-child(5n) .repo-background {
     background-color: #cd3e94;
 }
 
-.repo-list-item:nth-child(6n),
-.repo-background {
+.repo-list-item:nth-child(6n) .repo-background {
     background-color: #4c49ea;
 }
 
