@@ -1,4 +1,3 @@
-import { randomUUID } from 'crypto';
 import React, { ReactElement, useEffect, useState } from 'react';
 import './GitHub.css';
 
@@ -9,9 +8,16 @@ type GitHubRepo = {
     name: string;
     description: string;
     full_name: string;
-    url: string;
+    html_url: string;
     created_at: Date;
     fork: boolean;
+}
+
+type GitHubPage = {
+    status: string;
+    html_url: string;
+    public: boolean;
+    https_certificate: { domains: string }
 }
 
 // generic type T receives a string and returns a promise
@@ -46,10 +52,11 @@ export default function Repos() {
                 <div className='repo-box'>
                     {repos.map((repo) => {
                         return (
-                        <div className="repo-list-item">
-                            <a href={repo.url} className="repo-link">
+                        <div className="repo-list-item" key={repo.id}>
+                            <a href={repo.html_url} className="repo-link">
                                 <div className="repo-background"></div>
                                 <div className="repo-title">{repo.name}</div>
+                                <div className="repo-description">{repo.description}</div>
                                 <div className='repo-date-box'>
                                     <div className="repo-date-box">
                                         <span className="repo-date">{formatDate(repo.created_at)}</span>
@@ -58,12 +65,25 @@ export default function Repos() {
                             </a>
                         </div>
                         )
+                        // return (
+                        //     <div className="repo-list-item" key={repo.id}>
+                        //         <a href='#' className="repo-link">
+                        //             <div className="repo-background"></div>
+                        //             <a href={repo.html_url}>
+                        //                 <div className="repo-title">{repo.name}</div>
+                        //             </a>
+                        //             <div className='repo-description'>{repo.description}</div>
+                        //             <div className='repo-date-box'>
+                        //                 <div className="repo-date-box">
+                        //                     <span className="repo-date">{formatDate(repo.created_at)}</span>
+                        //                 </div>
+                        //             </div>
+                        //         </a>
+                        //     </div>
+                        //     )
                     })}
                 </div>
             </div>
         </>
     )
 }
-
-
-

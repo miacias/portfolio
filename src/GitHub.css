@@ -74,6 +74,10 @@ body {
     position: relative;
 }
 
+.repo-description {
+    z-index: 2;
+}
+
 .repo-date-box {
     font-size: 18px;
     color: #FFF;
