@@ -1,6 +1,8 @@
 // import './Card.css';
 import React, { ReactElement, useEffect, useState } from 'react';
 import styles from './Card.module.css'
+// import img from './logo192.png'
+// console.log(img)
 
 // custom type
 type GitHubRepo = {
@@ -52,22 +54,26 @@ export default function Card(props: any) {
                         console.log(topics)
                         return (
                             <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{backgroundImage: require(`../../assets/images/${repo.name}.png`)}}>
-                                    <div className={styles.repoBox}>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <div className={styles.repoContent}>
-                                            <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
-                                            <p className='repo-description'>{repo.description}</p>
-                                            <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
-                                            <p className='repo-date'>Started: {formatDate(repo.created_at)}</p>
-                                            {/* {topics.map((topic) => {
-                                                return 
-                                            })} */}
-                                            <p className='repo-topics'>{repo.topics}</p>
-                                        </div>
+                                {/* <div className={styles.repoBackgroundImg} style={{backgroundImage: require(`../../assets/images/${repo.name}.png`) || null}}> */}
+                                {/* <div className={styles.repoBackgroundImg} style={{backgroundImage: `${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? ""}}> */}
+                                {/* <img src={`${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? ""}/> */}
+                                    <div className={styles.repoBackgroundImg} style={{backgroundImage: `${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? `${process.env.PUBLIC_URL}/assets/images/tech-blog.png`}}>
+                                        <div className={styles.repoBox}>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <div className={styles.repoContent}>
+                                                <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
+                                                <p className='repo-description'>{repo.description}</p>
+                                                <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
+                                                <p className='repo-date'>Started: {formatDate(repo.created_at)}</p>
+                                                {/* {topics.map((topic) => {
+                                                    return 
+                                                })} */}
+                                                <p className='repo-topics'>{repo.topics}</p>
+                                            </div>
+                                        {/* </div> */}
                                     </div>
                                 </div>
                             </div>
