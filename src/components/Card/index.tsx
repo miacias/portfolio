@@ -48,11 +48,11 @@ export default function Card(props: any) {
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
-                        console.log(repo.topics)
                         const topics: string = repo.topics;
+                        console.log(topics)
                         return (
                             <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{backgroundImage: `./src/assets/images/${repo.name}.png`}}>
+                                <div className={styles.repoBackgroundImg} style={{backgroundImage: require(`../../assets/images/${repo.name}.png`)}}>
                                     <div className={styles.repoBox}>
                                         <span className={styles.repoBoxSpan}></span>
                                         <span className={styles.repoBoxSpan}></span>
@@ -64,7 +64,7 @@ export default function Card(props: any) {
                                             <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
                                             <p className='repo-date'>Started: {formatDate(repo.created_at)}</p>
                                             {/* {topics.map((topic) => {
-
+                                                return 
                                             })} */}
                                             <p className='repo-topics'>{repo.topics}</p>
                                         </div>
