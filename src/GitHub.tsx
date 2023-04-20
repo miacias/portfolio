@@ -1,11 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import './GitHub.css';
-const gs = require('github-scraper');
-
-type Project = {
-    repo: GitHubRepo
-    page: GitHubPage
-}
 
 // custom type
 type GitHubRepo = {
@@ -15,16 +9,9 @@ type GitHubRepo = {
     description: string;
     full_name: string;
     html_url: string;
+    homepage: string;
     created_at: Date;
     fork: boolean;
-}
-
-type GitHubPage = {
-    status: string;
-    has_pages: boolean;
-    html_url: string;
-    public: boolean;
-    // https_certificate: { domains: string }
 }
 
 // generic type T receives a string and returns a promise
@@ -48,7 +35,6 @@ const formatPageUrl = (repoUrl: string):string => {
 // sends github repositories to React as JSX cards
 export default function Repos() {
     const [repos, setRepos] = useState<GitHubRepo[]>([]);
-    const [pages, setPages] = useState<GitHubPage[]>([]);
     // retrieve GitHub API
     useEffect(() => {
         fetchGithub<GitHubRepo[]>('https://api.github.com/users/miacias/repos?type=owner')
@@ -60,20 +46,6 @@ export default function Repos() {
                 return console.log(repos);
             })
     },[]); // empty dependencies means run only once
-    // retrieve GitHub Pages API
-    // useEffect(() => {
-    //     fetchGithub<GitHubPage[]>('https://api.github.com/miacias/repos')
-    //         .then(pages => {
-    //             setPages(pages)
-    //             return console.log(pages);
-    //         })
-    // },[]); // empty dependencies means run only once
-    useEffect(() => {
-        const url:string = 'miacias'
-        gs(url, (err: any, data: any) => {
-            return console.log(data, err);
-        })
-    })
     return (
         <>
             <h2>My Projects</h2>
@@ -81,22 +53,6 @@ export default function Repos() {
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
-                        // STANDARD CARD
-                        // return (
-                        // <div className="repo-list-item" key={repo.id}>
-                        //     <a href={repo.html_url} className="repo-link">
-                        //         <div className="repo-background"></div>
-                        //         <div className="repo-title">{repo.name}</div>
-
-                        //         <div className='repo-date-box'>
-                        //             <div className="repo-date-box">
-                        //                 <span className="repo-date">{formatDate(repo.created_at)}</span>
-                        //             </div>
-                        //         </div>
-                        //     </a>
-                        // </div>
-                        // )
-
                         // MODIFIED CARD
                         return (
                             /* 
@@ -110,7 +66,7 @@ export default function Repos() {
                                         <div className="repo-title">{repo.name}</div>
                                     </a>
                                     <a href={formatPageUrl(repo.html_url)}>
-                                        <div className='deployed-link'>{formatPageUrl(repo.html_url)}</div>
+                                        <div className='deployed-link'>{repo.homepage}</div>
                                     </a>
                                     <div className='repo-description'>{repo.description}</div>
                                     <div className='repo-date-box'>
