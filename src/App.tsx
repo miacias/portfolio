@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import GitHub from './GitHub';
+import Header from './components/Header';
 import Portfolio from './components/Portfolio/Portfolio';
 
 let App = () => {

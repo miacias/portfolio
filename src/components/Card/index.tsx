@@ -32,16 +32,16 @@ export default function Card() {
     useEffect(() => {
         fetchGithub<GitHubRepo[]>('https://api.github.com/users/miacias/repos?type=owner')
             .then(repos => {
-                setRepos(repos
+                return setRepos(repos
                     .filter(repo => !repo.fork) // removes forked repos
                     .sort((a, b) => +new Date(b.created_at) - +new Date(a.created_at)) // sorts newest to oldest
                 )
-                return console.log(repos);
+                // return console.log(repos);
             })
     }, []); // empty dependencies means run only once
     return (
         <>
-            <h2>My Projects</h2>
+            <h2 id='portfolio'>My Projects</h2>
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
