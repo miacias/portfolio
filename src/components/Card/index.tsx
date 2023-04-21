@@ -53,7 +53,7 @@ export default function Card() {
                         return (
                             // card resource https://codepen.io/uiswarup/pen/RBByzW
                             <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: background }}>
+                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), ${background}` }}>
                                     <div className={styles.repoBox}>
                                         <span className={styles.repoBoxSpan}></span>
                                         <span className={styles.repoBoxSpan}></span>
