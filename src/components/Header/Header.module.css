@@ -9,6 +9,22 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  color:#f6f4e6;
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  display: block;
+  height: 200px;
+  text-align: center;
+
+}
+
+.logo {
+  transform: scale(0.5);
+  margin: 0;
+  padding: 0;
 }
 
 .navMenu {
