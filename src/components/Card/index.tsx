@@ -52,30 +52,42 @@ export default function Card() {
                         const background: string = `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}.png)` ?? `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
                         return (
                             // card resource https://codepen.io/uiswarup/pen/RBByzW
-                            <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: background }}>
-                                    <div className={styles.repoBox}>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <span className={styles.repoBoxSpan}></span>
-                                        <div className={styles.repoContent}>
-                                            <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
-                                            <p className='repo-description'>{repo.description}</p>
-                                            <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
-                                            <p className='repo-date'>Started {formatDate(repo.created_at)}</p>
-                                            <p className='repo-topics'>{repo.topics.length ? "Topics:" : ""}
-                                                {repo.topics.map((topic: string) => {
-                                                    return <span key={topic}> {topic} |</span>
-                                                })}</p>
+                            <canvas id="canvas-image-blending" key={repo.name} style={{
+                                position: "absolute", 
+                                display: "block",
+                                width: "100%",
+                                height: "100%",
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                                }}>
+                                <div className={styles.repoContainer} key={repo.id}>
+                                    <div className={styles.repoBackgroundImg} style={{ backgroundImage: background }}>
+                                        <div className={styles.repoBox}>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <span className={styles.repoBoxSpan}></span>
+                                            <div className={styles.repoContent}>
+                                                <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
+                                                <p className='repo-description'>{repo.description}</p>
+                                                <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
+                                                <p className='repo-date'>Started {formatDate(repo.created_at)}</p>
+                                                <p className='repo-topics'>{repo.topics.length ? "Topics:" : ""}
+                                                    {repo.topics.map((topic: string) => {
+                                                        return <span key={topic}> {topic} |</span>
+                                                    })}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </canvas>
                         )
                     })}
                 </div>
             </div>
+            <script src="./granim.min.js"></script>
         </>
     )
     // ORIGINAL CARD WITHOUT AUTO GITHUB API
