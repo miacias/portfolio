@@ -79,8 +79,8 @@ export default function Card() {
                                             <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
                                             <p className='repo-description'>{repo.description}</p>
                                             <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
-                                            <p className='repo-date'>Started {formatDate(repo.created_at)}</p>
-                                            <p className='repo-topics'>{repo.topics.length ? "Topics:" : ""}
+                                            <p className={styles.repoDate}>Started {formatDate(repo.created_at)}</p>
+                                            <p className={styles.repoTopics}>{repo.topics.length ? "Topics:" : ""}
                                                 {repo.topics.map((topic: string) => {
                                                     return <span key={topic}> {topic} |</span>
                                                 })}</p>
