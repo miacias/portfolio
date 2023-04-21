@@ -25,8 +25,10 @@ body {
 
 .repoBackgroundImg {
     /* background-image: url("https://3.bp.blogspot.com/-piZWCW2uUbg/W2fPXxkWZgI/AAAAAAAAOu0/eydmMjTIqcwLMHEEr2H7imqoRTxMw4o9QCLcBGAs/s1600/among_trees_night_dribbble.png"); */
-    height: 400px;
-    width: 800px;
+    /* height: 400px; */
+    /* width: 800px; */
+    height: 20em;
+    width: 40em;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 5% auto;
