@@ -8,7 +8,7 @@ let App = () => {
       <Header/>
       {/* <About/> */}
       {/* <GitHub/> */}
-      {/* <Portfolio/> */}
+      <Portfolio/>
       {/* <Contact/> */}
       {/* <Resume/> */}
       {/* <Footer/> */}
