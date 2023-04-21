@@ -49,11 +49,27 @@ export default function Card() {
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
-                        const background: string = `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}.png)` ?? `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
+                        const background: string = `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}1.png)` ?? `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
+                        const colors: any = {
+                            darkBlue: `rgba(8, 13, 43, .4)`,
+                            midBlue: `rgba(14, 56, 129, .6)`,
+                            brightBlue: `rgba(72, 221, 213, .4)`,
+                            purple: `rgba(70, 40, 132, .2)`,
+                            yellow: `rgba(237, 188, 142, .4)`,
+                            white: `rgba(72, 221, 213, .4)`,
+                            red: `rgba(116, 23, 56, .2)`
+                        }
+                        // const gradient: string = `linear-gradient(to top right, ${colors.darkBlue}, ${colors.purple}, ${colors.midBlue}, ${colors.brightBlue}, ${colors.yellow}, ${colors.red})`;
+                        const gradient: any = {
+                            one: `linear-gradient(217deg, ${colors.darkBlue}, ${colors.midBlue} 70.71%)`,
+                            two: `linear-gradient(127deg, ${colors.purple}, ${colors.brightBlue} 70.71%)`,
+                            three: `linear-gradient(336deg, ${colors.yellow}, ${colors.red} 70.71%)`
+                        } 
+
                         return (
                             // card resource https://codepen.io/uiswarup/pen/RBByzW
                             <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), ${background}` }}>
+                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: `${gradient.one}, ${gradient.two},  ${background}`}}>
                                     <div className={styles.repoBox}>
                                         <span className={styles.repoBoxSpan}></span>
                                         <span className={styles.repoBoxSpan}></span>
