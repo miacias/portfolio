@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './components/Header';
-import Portfolio from './components/Portfolio/Portfolio';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
 
 let App = () => {
   return (
     <>
       <Header/>
-      {/* <About/> */}
-      {/* <GitHub/> */}
+      <About/>
       <Portfolio/>
       {/* <Contact/> */}
       {/* <Resume/> */}
