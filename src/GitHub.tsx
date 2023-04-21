@@ -43,7 +43,7 @@ export default function Repos() {
                     .filter(repo => !repo.fork) // removes forked repos
                     .sort((a, b) => +new Date(b.created_at) - +new Date(a.created_at)) // sorts newest to oldest
                 )
-                return console.log(repos);
+                // return console.log(repos);
             })
     },[]); // empty dependencies means run only once
     return (
