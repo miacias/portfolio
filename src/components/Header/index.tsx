@@ -1,5 +1,6 @@
 import './Header.module.css';
 import styles from './Header.module.css'
+// import logo from '../../images/logo-no-background.png';
 
 function Header() {
   return (
@@ -16,9 +17,13 @@ function Header() {
     //     </nav>
     //   </header>
     // </div>
-    <div className="Header">
     <header className="">
-      <h1>Mia Ciasullo</h1>
+      <div className='brand'>
+        <h1 className='title'>Mia Ciasullo</h1>
+        <img src={process.env.PUBLIC_URL + '/assets/images/logo-no-background.png'}
+          alt="blue cloud with gold flecks reading Mia Ciasullo, Fullstack developer" 
+          className="logo"/>
+      </div>
       <nav className={styles.navMenu}>
         <a href="#about">About Me</a>
         <a href="#portfolio">Portfolio</a>
@@ -27,7 +32,6 @@ function Header() {
         {/* <div className={styles.dot}></div> */}
       </nav>
     </header>
-  </div>
   );
 }
 
