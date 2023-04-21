@@ -13,7 +13,7 @@ type GitHubRepo = {
     full_name: string;
     html_url: string;
     homepage: string;
-    topics: string;
+    topics: any;
     created_at: Date;
     fork: boolean;
 }
@@ -29,7 +29,7 @@ const formatDate = (date: Date):string => {
     return (`${new Date(date).toLocaleString('default', { month: 'short' })} ${new Date(date).getDate()}, ${new Date(date).getFullYear()}`)
 }
 
-export default function Card(props: any) {
+export default function Card() {
     const [repos, setRepos] = useState<GitHubRepo[]>([]);
     // retrieve GitHub API
     useEffect(() => {
@@ -50,14 +50,16 @@ export default function Card(props: any) {
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {
-                        const topics: string = repo.topics;
-                        console.log(topics)
+                        const previewImg: any = `${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`;
+                        console.log(typeof previewImg)
+                        // const background: string = `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}.png)`?? `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
+                        const background: string = previewImg.exists() ? `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}.png)` : `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
                         return (
                             <div className={styles.repoContainer} key={repo.id}>
                                 {/* <div className={styles.repoBackgroundImg} style={{backgroundImage: require(`../../assets/images/${repo.name}.png`) || null}}> */}
                                 {/* <div className={styles.repoBackgroundImg} style={{backgroundImage: `${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? ""}}> */}
                                 {/* <img src={`${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? ""}/> */}
-                                    <div className={styles.repoBackgroundImg} style={{backgroundImage: `${process.env.PUBLIC_URL}/assets/images/${repo.name}.png`?? `${process.env.PUBLIC_URL}/assets/images/tech-blog.png`}}>
+                                    <div className={styles.repoBackgroundImg} style={{backgroundImage: background}}>
                                         <div className={styles.repoBox}>
                                             <span className={styles.repoBoxSpan}></span>
                                             <span className={styles.repoBoxSpan}></span>
@@ -67,11 +69,12 @@ export default function Card(props: any) {
                                                 <h2 className={styles.h2}><a href={repo.homepage}>{repo.name}</a></h2>
                                                 <p className='repo-description'>{repo.description}</p>
                                                 <p className='repo-github'><a href={repo.html_url}>my code here</a></p>
-                                                <p className='repo-date'>Started: {formatDate(repo.created_at)}</p>
-                                                {/* {topics.map((topic) => {
-                                                    return 
-                                                })} */}
-                                                <p className='repo-topics'>{repo.topics}</p>
+                                                <p className='repo-date'>Started {formatDate(repo.created_at)}</p>
+                                                {/* displays GitHub topics list, if any */}
+                                                <p className='repo-topics'>{repo.topics.length ? "Topics:" : ""}
+                                                    {repo.topics.map((topic: string) => {
+                                                        return <span> {topic} |</span>
+                                                    })}</p>
                                             </div>
                                         {/* </div> */}
                                     </div>
