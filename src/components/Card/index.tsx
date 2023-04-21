@@ -1,8 +1,5 @@
-// import './Card.css';
 import React, { ReactElement, useEffect, useState } from 'react';
 import styles from './Card.module.css'
-// import img from './logo192.png'
-// console.log(img)
 
 // custom type
 type GitHubRepo = {
@@ -42,7 +39,6 @@ export default function Card() {
                 return console.log(repos);
             })
     }, []); // empty dependencies means run only once
-    // returns TSX to webpage
     return (
         <>
             <h2>My Projects</h2>
@@ -69,7 +65,7 @@ export default function Card() {
                         return (
                             // card resource https://codepen.io/uiswarup/pen/RBByzW
                             <div className={styles.repoContainer} key={repo.id}>
-                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: `${gradient.one}, ${gradient.two},  ${background}`}}>
+                                <div className={styles.repoBackgroundImg} style={{ backgroundImage: `${gradient.one}, ${gradient.two}, ${background}`}}>
                                     <div className={styles.repoBox}>
                                         <span className={styles.repoBoxSpan}></span>
                                         <span className={styles.repoBoxSpan}></span>
