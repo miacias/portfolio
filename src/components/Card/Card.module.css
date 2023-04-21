@@ -7,6 +7,7 @@ middle blue 0E3881
 black blue 080D2B
 red 741738
 white CCC3DF
+purple 462884
 */
 
 * {
@@ -23,12 +24,16 @@ body {
     background-color: #111845;
 }
 
+a:link {
+  text-decoration: none !important;
+}
+
 .repoBackgroundImg {
     /* background-image: url("https://3.bp.blogspot.com/-piZWCW2uUbg/W2fPXxkWZgI/AAAAAAAAOu0/eydmMjTIqcwLMHEEr2H7imqoRTxMw4o9QCLcBGAs/s1600/among_trees_night_dribbble.png"); */
     /* height: 400px; */
     /* width: 800px; */
     height: 20em;
-    width: 40em;
+    width: 35em;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 5% auto;
@@ -40,7 +45,9 @@ body {
 }
 
 .h2 {
+    color: white;
     font-size:19px;
+    text-decoration: none !important;
 }
 
 .repoBox{
@@ -86,7 +93,15 @@ body {
     padding:20px;
     text-align:center;
     box-shadow: 0 5px 10px rgba(9,0,0,0.5);
-    
+}
+
+.repoTopics {
+  font-size:.8em;
+}
+
+.repoDate {
+  color: #EDBC8E;
+  font-weight: 600;
 }
 
 .repoBoxSpan{
