@@ -41,7 +41,7 @@ export default function Card() {
     }, []); // empty dependencies means run only once
     return (
         <>
-            <h2>My Projects</h2>
+            <h2 id='portfolio'>My Projects</h2>
             <div className='repo-format-container'>
                 <div className='repo-box'>
                     {repos.map((repo) => {

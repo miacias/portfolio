@@ -2,7 +2,6 @@ import './Header.module.css';
 import styles from './Header.module.css'
 
 function Header() {
-  console.log(styles)
   return (
     // <div className="Header">
     //   <header className="">
@@ -21,11 +20,11 @@ function Header() {
     <header className="">
       <h1>Mia Ciasullo</h1>
       <nav className={styles.navMenu}>
-        <a href="/">About Me</a>
-        <a href="/my-work">Portfolio</a>
-        <a href="/contact">Contact</a>
-        <a href="/resume">Resume</a>
-        <div className={styles.dot}></div>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#tech">Technologies</a>
+        <a href="#contact">Contact</a>
+        {/* <div className={styles.dot}></div> */}
       </nav>
     </header>
   </div>
