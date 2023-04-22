@@ -7,18 +7,6 @@ interface Skillset {
 
 const langFrameworks: Skillset[] = [
     {
-        name: 'HTML',
-        devicon: "devicon-html5-plain"
-    },
-    {
-        name: 'bootstrap',
-        devicon: "devicon-bootstrap-plain"
-    },
-    {
-        name: 'CSS',
-        devicon: "devicon-css3-plain"
-    },
-    {
         name: 'JavaScript',
         devicon: "devicon-javascript-plain"
     },
@@ -31,16 +19,28 @@ const langFrameworks: Skillset[] = [
         devicon: "devicon-jquery-plain"
     },
     {
+        name: 'HTML',
+        devicon: "devicon-html5-plain"
+    },
+    {
+        name: 'bootstrap',
+        devicon: "devicon-bootstrap-plain"
+    },
+    {
+        name: 'CSS',
+        devicon: "devicon-css3-plain"
+    },
+    {
+        name: 'Markdown',
+        devicon: "devicon-markdown-original"
+    },
+    {
         name: 'GraphQL',
         devicon: "devicon-graphql-plain"
     },
     {
         name: 'Handlebars JS',
         devicon: "devicon-handlebars-plain"
-    },
-    {
-        name: 'Markdown',
-        devicon: "devicon-markdown-original"
     },
     {
         name: 'MongoDB',
@@ -95,29 +95,44 @@ const tools: Skillset[] = [
     },
 ]
 
-
-export default function Tech() {
+function Technologies() {
     return (
         <>
-            <section className='technologies'>
-                <h2 id='technologies'>Technologies</h2>
-                {langFrameworks.map((tech) => {
-                    return (
-                        <div key={tech.name}>
-                            <h3>{tech.name}</h3>
-                            <i className={`${tech.devicon} ${styles.svg}`}></i>
-                        </div>
-                    )
-                })}
-                <h2>Tools</h2>
-                {tools.map((tech) => {
-                    return (
-                        <div key={tech.name}>
-                            <h3>{tech.name}</h3>
-                            <i className={`${tech.devicon} ${styles.svg}`}></i>
-                        </div>
-                    )
-                })}
+            <h3>Technologies</h3>
+            {langFrameworks.map((tech) => {
+                return (
+                    <div key={tech.name}>
+                        <p>{tech.name}</p>
+                        <i className={`${tech.devicon} ${styles.svg}`}></i>
+                    </div>
+                )
+            })}
+        </>
+    )
+}
+
+function Tools() {
+    return (
+        <>
+        <h3>Tools</h3>
+            {tools.map((tech) => {
+                return (
+                    <div key={tech.name}>
+                        <p>{tech.name}</p>
+                        <i className={`${tech.devicon} ${styles.svg}`}></i>
+                    </div>
+                )
+            })}
+        </>
+    )
+}
+
+export default function Skills() {
+    return (
+        <>
+            <section className='skills'>
+                <Technologies/>
+                <Tools/>
             </section>
         </>
     )

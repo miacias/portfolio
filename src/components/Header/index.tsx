@@ -20,7 +20,7 @@ export default function Header() {
       <nav className={styles.navMenu}>
         <a href="#about">About Me</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#tech">Technologies</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
         {/* <div className={styles.dot}></div> */}
       </nav>
