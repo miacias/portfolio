@@ -1,3 +1,6 @@
+import React, { ReactElement, useEffect, useState } from 'react';
+import styles from './Technologies.module.css';
+
 export default function Tech() {
     return (
         <>
