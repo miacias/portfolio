@@ -15,3 +15,4 @@ https://github.com/transitive-bullshit/react-particle-effect-button - build butt
 
 https://sarcadass.github.io/granim.js/examples.html - color effects
 https://devicon.dev/ - icons
+https://thebiobucket.blogspot.com/2011/10/how-to-link-to-google-docs-for-download.html - formatting google doc link to automatically download
