@@ -14,3 +14,4 @@ https://freefrontend.com/react-js-buttons/ - particle button (travis fischer apr
 https://github.com/transitive-bullshit/react-particle-effect-button - build button
 
 https://sarcadass.github.io/granim.js/examples.html - color effects
+https://devicon.dev/ - icons
