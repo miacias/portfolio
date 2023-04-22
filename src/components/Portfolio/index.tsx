@@ -2,16 +2,11 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import './Portfolio.module.css';
 import Card from '../Card'
 
-/* 
-this section WOULD HAVE been important in the process
-if I were to hard-code my repositories. Since GitHub API
-is rendering all the data in Card(), this section is ultimately unnecessary
-*/
-
-export default function() {
+export default function Portfolio() {
     return (
         <>
-            <section className='repositories'>
+            <section className='portfolio'>
+                <h2 id='portfolio'>My Projects</h2>
                 <Card/>
             </section>
         </>
