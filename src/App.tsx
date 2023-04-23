@@ -7,16 +7,21 @@ import Tech from './components/Technologies';
 import Contact from './components/Contact';
 
 let App = () => {
-  const [view, setView] = useState('about');
+  const offWhite: string = '#f6f4e6';
+  const yellow: string = '#fddb3a';
 
+  // sets default view to About Me component
+  const [view, setView] = useState('about');
+  const [color, setColor] = useState(offWhite);
+
+  // sets the view based on the passed in value from the clicked Header component
   const handleView = (value: string) => {
     setView(value);
-    console.log(value)
-    // switchView()
+    setColor(offWhite ? yellow : offWhite);
   }
 
+  // checks current useState of view and renders on page
   const switchView = () => {
-    console.log('hello switch')
     switch (view) {
       case 'about':
         return (<About/>)
@@ -31,12 +36,8 @@ let App = () => {
 
   return (
     <>
-      <Header view={view} handleView={handleView} />
+      <Header view={view} handleView={handleView} color={color}/>
       {switchView()}
-      {/* <About />
-      <Portfolio />
-      <Contact/>
-      <Tech /> */}
       {/* <Footer/> */}
     </>
   );
