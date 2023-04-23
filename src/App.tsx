@@ -12,12 +12,14 @@ let App = () => {
 
   // sets default view to About Me component
   const [view, setView] = useState('about');
-  const [color, setColor] = useState(offWhite);
+  const [color, setColor] = useState({
+    active: yellow,
+    inactive: offWhite
+  });
 
   // sets the view based on the passed in value from the clicked Header component
   const handleView = (value: string) => {
     setView(value);
-    setColor(offWhite ? yellow : offWhite);
   }
 
   // checks current useState of view and renders on page

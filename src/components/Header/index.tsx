@@ -6,10 +6,10 @@ export default function Header(props: any): JSX.Element {
     <header className="header">
       <nav className={styles.navMenu}>
         <ul>
-          <li onClick={() => props.handleView("about")} style={{color: `${props.view === 'about' ? '#fddb3a' : '#f6f4e6'}`}}>About Me</li>
-          <li onClick={() => props.handleView("portfolio")} style={{color: `${props.view === 'portfolio' ? '#fddb3a' : '#f6f4e6'}`}}>Portfolio</li>
-          <li onClick={() => props.handleView("skills")} style={{color: `${props.view === 'skills' ? '#fddb3a' : '#f6f4e6'}`}}>Skills</li>
-          <li onClick={() => props.handleView("contact")} style={{color: `${props.view === 'contact' ? '#fddb3a' : '#f6f4e6'}`}}>Contact</li>
+          <li onClick={() => props.handleView("about")} style={{color: `${props.view === 'about' ? props.color.active : props.color.inactive}`}}>About Me</li>
+          <li onClick={() => props.handleView("portfolio")} style={{color: `${props.view === 'portfolio' ? props.color.active : props.color.inactive}`}}>Portfolio</li>
+          <li onClick={() => props.handleView("skills")} style={{color: `${props.view === 'skills' ? props.color.active : props.color.inactive}`}}>Skills</li>
+          <li onClick={() => props.handleView("contact")} style={{color: `${props.view === 'contact' ? props.color.active : props.color.inactive}`}}>Contact</li>
           {/* <div className={styles.dot}></div> */}
         </ul>
       </nav>
