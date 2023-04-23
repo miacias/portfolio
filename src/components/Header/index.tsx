@@ -1,7 +1,7 @@
 import './Header.module.css';
 import styles from './Header.module.css'
 
-export default function Header() {
+export default function Header(props: any) {
   return (
     // <div className="Header">
     //   <header className="">
@@ -18,10 +18,10 @@ export default function Header() {
     // </div>
     <header className="">
       <nav className={styles.navMenu}>
-        <a href="#about">About Me</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <p onClick={() => props.handleView("about")}>About Me</p>
+        <p onClick={() => props.handleView("portfolio")}>Portfolio</p>
+        <p onClick={() => props.handleView("skills")}>Skills</p>
+        <p onClick={() => props.handleView("contact")}>Contact</p>
         {/* <div className={styles.dot}></div> */}
       </nav>
       <div className={styles.brand}>
