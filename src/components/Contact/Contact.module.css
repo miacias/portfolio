@@ -1,0 +1,10 @@
+.field {
+    min-width: 400px;
+    display: flex;
+    /* justify-content: space-around; */
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 15px;
+}
