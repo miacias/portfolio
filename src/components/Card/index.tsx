@@ -59,8 +59,7 @@ export default function Card() {
                             one: `linear-gradient(217deg, ${colors.darkBlue}, ${colors.midBlue} 70.71%)`,
                             two: `linear-gradient(127deg, ${colors.purple}, ${colors.brightBlue} 70.71%)`,
                             three: `linear-gradient(336deg, ${colors.yellow}, ${colors.red} 70.71%)`
-                        } 
-
+                        }
                         return (
                             // card resource https://codepen.io/uiswarup/pen/RBByzW
                             <div className={styles.repoContainer} key={repo.id}>

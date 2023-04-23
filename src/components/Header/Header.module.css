@@ -13,16 +13,14 @@ body {
 }
 
 .brand {
-  display: flex;
   flex-wrap: wrap;
   display: block;
-  height: 200px;
   text-align: center;
 
 }
 
 .logo {
-  transform: scale(0.5);
+  height: 40em;
   margin: 0;
   padding: 0;
 }

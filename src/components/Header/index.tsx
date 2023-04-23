@@ -1,39 +1,26 @@
 import './Header.module.css';
 import styles from './Header.module.css'
 
-export default function Header() {
+export default function Header(props: any): JSX.Element {
   return (
-    // <div className="Header">
-    //   <header className="">
-    //     <h1>Mia Ciasullo</h1>
-    //     <nav className="navbar">
-    //       <ul>
-    //       <li><a href="/">About Me</a></li>
-    //       <li><a href="/my-work">Portfolio</a></li>
-    //       <li><a href="/contact">Contact</a></li>
-    //       <li><a href="/resume">Resume</a></li>
-    //       </ul>
-    //     </nav>
-    //   </header>
-    // </div>
-    <header className="">
+    <header className="header">
       <nav className={styles.navMenu}>
-        <a href="#about">About Me</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        {/* <div className={styles.dot}></div> */}
+        <ul>
+          <li onClick={() => props.handleView("about")} style={{color: `${props.view === 'about' ? props.color.active : props.color.inactive}`}}>About Me</li>
+          <li onClick={() => props.handleView("portfolio")} style={{color: `${props.view === 'portfolio' ? props.color.active : props.color.inactive}`}}>Portfolio</li>
+          <li onClick={() => props.handleView("skills")} style={{color: `${props.view === 'skills' ? props.color.active : props.color.inactive}`}}>Skills</li>
+          <li onClick={() => props.handleView("contact")} style={{color: `${props.view === 'contact' ? props.color.active : props.color.inactive}`}}>Contact</li>
+          {/* <div className={styles.dot}></div> */}
+        </ul>
       </nav>
       <div className={styles.brand}>
         <h1 className='title'>Mia Ciasullo</h1>
         <img 
           src={process.env.PUBLIC_URL + '/assets/images/logo-no-background.png'}
           alt="blue cloud with gold flecks reading Mia Ciasullo, Fullstack developer" 
-          className={styles.logo}
+          className={`logo ${styles.logo}`}
         />
       </div>
     </header>
   );
 }
-
-// export default Header;
