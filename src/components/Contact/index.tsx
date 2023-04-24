@@ -17,7 +17,6 @@ export default  function Contact() {
 
     const onSubmit = async (event: any) => {
         console.log(event)
-        // event.preventDefault();
         await emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
             .then((response: any) => {
                 console.log(response.text);
