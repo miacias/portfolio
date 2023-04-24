@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://miacias.github.io/portfolio1",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +12,7 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
+    "email-js": "^2.0.2",
     "final-form": "^4.20.9",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",

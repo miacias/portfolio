@@ -16,3 +16,6 @@ https://github.com/transitive-bullshit/react-particle-effect-button - build butt
 https://sarcadass.github.io/granim.js/examples.html - color effects
 https://devicon.dev/ - icons
 https://thebiobucket.blogspot.com/2011/10/how-to-link-to-google-docs-for-download.html - formatting google doc link to automatically download
+
+https://final-form.org/docs/react-final-form/faq - react final form
+https://www.youtube.com/watch?v=QpmF1oBCC4c - react final form tutorial
