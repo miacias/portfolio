@@ -17,12 +17,12 @@ const langFrameworks: Skillset[] = [
         devicon: "devicon-jquery-plain"
     },
     {
-        name: 'HTML',
-        devicon: "devicon-html5-plain"
-    },
-    {
         name: 'bootstrap',
         devicon: "devicon-bootstrap-plain"
+    },
+    {
+        name: 'HTML',
+        devicon: "devicon-html5-plain"
     },
     {
         name: 'CSS',
@@ -37,7 +37,7 @@ const langFrameworks: Skillset[] = [
         devicon: "devicon-graphql-plain"
     },
     {
-        name: 'Handlebars JS',
+        name: 'Handlebars',
         devicon: "devicon-handlebars-plain"
     },
     {
@@ -60,6 +60,10 @@ const tools: Skillset[] = [
         devicon: "devicon-vscode-plain"
     },
     {
+        name: 'Node JS',
+        devicon: "devicon-nodejs-plain"
+    },
+    {
         name: 'Express',
         devicon: "devicon-express-original"
     },
@@ -74,10 +78,6 @@ const tools: Skillset[] = [
     {
         name: 'Heroku',
         devicon: "devicon-heroku-plain"
-    },
-    {
-        name: 'Node JS',
-        devicon: "devicon-nodejs-plain"
     },
     {
         name: 'npm',

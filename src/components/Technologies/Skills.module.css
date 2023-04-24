@@ -1,3 +1,36 @@
+.skills {
+    /* display: flex; */
+    padding: 1%;
+}
+
 .svg {
     font-size: 4em;
+}
+
+.logoBlock {
+    padding: .5em;
+}
+
+.iconArea {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.resumeInvite {
+    /* margin: auto; */
+    text-align: center;
+}
+
+.resumeEmbed {
+    /* border-top-left-radius: 8%; */
+    /* border-bottom-left-radius: 8%; */
+    border-radius: 190% 10% 10% 190%
+}
+
+iframe {
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin: auto;
 }

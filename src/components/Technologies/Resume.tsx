@@ -1,12 +1,19 @@
+import styles from "./Skills.module.css";
+
 export default function Resume() {
     return (
         <>
         <h3>Resume</h3>
-        <div>
+        <div className={styles.resumeInvite}>
             <p>I invite you to learn more about my experience and skills!</p>
             <a href="https://docs.google.com/document/export?format=txt&id=1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw"><button>Download my resume!</button></a>
         </div>
-        {/* <iframe src={`https://docs.google.com/document/d/1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw/view?embedded=true`} width='640' height='718' frameBorder='0'>Loading Resume…</iframe> */}
+        <iframe 
+            className={styles.resumeEmbed} 
+            src="https://docs.google.com/document/d/e/2PACX-1vRZKTDkEFMaIs47oLeMRDUVZU1jaWY_oTowjqWj4hVip4r2nn3UkI5z8vUAX6Ow6EUTMyHfDNz7U8yB/pub?embedded=true" 
+            width='850' 
+            height='400' 
+            title='Mia Ciasullo resume'>Loading Resume…</iframe>
         </>
     )
 }

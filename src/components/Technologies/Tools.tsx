@@ -5,14 +5,16 @@ export default function Tools() {
     return (
         <>
         <h3>Tools</h3>
+            <div className={styles.iconArea}>
             {tools.map((tech) => {
                 return (
-                    <div key={tech.name}>
+                    <div className={styles.logoBlock} key={tech.name}>
                         <i className={`${tech.devicon} ${styles.svg}`}></i>
                         <p>{tech.name}</p>
                     </div>
                 )
             })}
+            </div>
         </>
     )
 }
