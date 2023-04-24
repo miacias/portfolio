@@ -41,8 +41,8 @@ export default function Card() {
     }, []); // empty dependencies means run only once
     return (
         <>   
-            <div className='repo-format-container'>
-                <div className='repo-box'>
+            <div className={styles.repoContainer}>
+                {/* <div className='repo-box'> */}
                     {repos.map((repo) => {
                         const background: string = `url(${process.env.PUBLIC_URL}/assets/images/${repo.name}1.png)` ?? `url(${process.env.PUBLIC_URL}/assets/images/scott-carroll-unsplash.png)`;
                         const colors: any = {
@@ -84,7 +84,7 @@ export default function Card() {
                             </div>
                         )
                     })}
-                </div>
+                {/* </div> */}
             </div>
         </>
     )

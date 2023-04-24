@@ -11,19 +11,28 @@ type errors = {
 }
 
 export default  function Contact() {
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [message, setMessage] = useState('');
+    const [contact, setContact] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    
+    const onChange = () => {
+        // set state based on user input fields
+    }
 
-    const onSubmit = async (event: any) => {
+    const onSubmit = (event: any) => {
         console.log(event)
-        await emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
+        emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
             .then((response: any) => {
-                console.log(response.text);
+                if (response.status === 200) {
+                    alert("Thank you for your message! I will get back to you shortly.")
+                    // set state back to ("") for all fields
+                }
+
             }, (error: any) => {
                 console.log(error.text);
             });
-            alert("Thank you for your message! I will get back to you shortly.")
             // event.reset();
     };
     // disables form Submit if there is an error
@@ -43,6 +52,7 @@ export default  function Contact() {
     };
     return (
     <>
+    {/* set value to onChange, then value will be based on State. */}
         <Form 
             onSubmit={onSubmit} 
             validate={validate} 
@@ -54,7 +64,7 @@ export default  function Contact() {
                             render={({input, meta}) => (
                                 <div>
                                     <label>name</label>
-                                    <textarea {...input} />
+                                    <textarea {...input} onChange={input.onChange}/>
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
