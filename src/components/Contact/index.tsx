@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { render } from 'react-dom'
 import { Form, Field } from 'react-final-form'
 import emailjs from '@emailjs/browser';
@@ -10,21 +10,25 @@ type errors = {
     message?: string;
 }
 
-export default function Contact() {
+export default  function Contact() {
+    // const [name, setName] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [message, setMessage] = useState('');
 
-    const onSubmit = (event: any) => {
-        // event.preventDefault()
-        emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '.contact-form', 'DOsrgnZ-5O0QZj-fu')
+    const onSubmit = async (event: any) => {
+        console.log(event)
+        // event.preventDefault();
+        await emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
             .then((response: any) => {
                 console.log(response.text);
             }, (error: any) => {
                 console.log(error.text);
             });
-            event.target.reset();
+            alert("Thank you for your message! I will get back to you shortly.")
+            // event.reset();
     };
     // disables form Submit if there is an error
     const validate = (event: any): any => {
-        console.log(event)
         const errors: errors = {};
         if (event.name && event.name.length < 2) {
             errors.name = 'missing name'
@@ -41,19 +45,10 @@ export default function Contact() {
     return (
     <>
         <Form 
-            className='contact-form'
             onSubmit={onSubmit} 
             validate={validate} 
             render={( {handleSubmit} ) => (
-                <form onSubmit={handleSubmit}>
-                    {/* <div className={styles.field}>
-                        <label>email</label>
-                        <Field 
-                            name='email' 
-                            component='input' 
-                            placeholder='email'
-                        />
-                    </div> */}
+                <form onSubmit={handleSubmit} id='contact-form'>
                     <div className={styles.field}>
                         <Field
                             name='name' 
