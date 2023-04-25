@@ -17,8 +17,33 @@ export default  function Contact() {
         message: ''
     });
     
-    const onChange = () => {
+    const onChange = (event: any) => {
+        // console.log(input)
         // set state based on user input fields
+        const {target} = event;
+        const inputType = target.name;
+        const inputValue = target.value;
+        console.log(inputType, inputValue)
+        let newContact: any = contact;
+        console.log(contact)
+        switch (inputType) {
+            case 'name':
+                newContact.name += inputValue;
+                break;
+                // return setContact(newContact);
+            case 'email':
+                 newContact.email += inputValue;
+                break;
+                // return setContact(newContact);
+            case 'message':
+                 newContact.message += inputValue;
+                break;
+                // return setContact(newContact);
+
+        }
+        console.log(newContact)
+        setContact(newContact);
+        // return;
     }
 
     const onSubmit = (event: any) => {
@@ -29,7 +54,6 @@ export default  function Contact() {
                     alert("Thank you for your message! I will get back to you shortly.")
                     // set state back to ("") for all fields
                 }
-
             }, (error: any) => {
                 console.log(error.text);
             });
@@ -64,7 +88,7 @@ export default  function Contact() {
                             render={({input, meta}) => (
                                 <div>
                                     <label>name</label>
-                                    <textarea {...input} onChange={input.onChange}/>
+                                    <input {...input} /*value={contact.name} onChange={(event) => onChange(event)}*/ />
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
@@ -76,7 +100,7 @@ export default  function Contact() {
                             render={({input, meta}) => (
                                 <div>
                                     <label>email</label>
-                                    <textarea {...input} />
+                                    <input {...input} />
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
