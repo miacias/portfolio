@@ -33,6 +33,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1em;
+  padding: 1em;
 }
 
 .repoBackgroundImg {

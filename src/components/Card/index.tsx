@@ -84,26 +84,7 @@ export default function Card() {
                             </div>
                         )
                     })}
-                {/* </div> */}
             </div>
         </>
     )
-    // ORIGINAL CARD WITHOUT AUTO GITHUB API
-    // return (
-    //     <div className={styles.repoContainer}>
-    //         <div className={styles.repoBackgroundImg}>
-    //             <div className={styles.repoBox}>
-    //                 <span className={styles.repoBoxSpan}></span>
-    //                 <span className={styles.repoBoxSpan}></span>
-    //                 <span className={styles.repoBoxSpan}></span>
-    //                 <span className={styles.repoBoxSpan}></span>
-    //                 <div className={styles.repoContent}>
-    //                     <h2 className={styles.h2}><a href={props.homepage}>Name: {props.name}</a></h2>
-    //                     <p className='repo-description'>Description: {props.description}</p>
-    //                     <p className='repo-date'><a href={props.html_url}>Started: {props.date}</a></p>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // )
 }

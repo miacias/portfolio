@@ -7,7 +7,7 @@ export default function Resume() {
         <div className={styles.resumeInvite}>
             <p>I invite you to learn more about my experience and skills!</p>
             <a href="https://docs.google.com/document/export?format=txt&id=1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw">
-                <button>Download my resume!</button>
+                <button className={styles.resumeBtn}>Download my resume!</button>
             </a>
         </div>
         <iframe 

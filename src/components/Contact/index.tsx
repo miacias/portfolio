@@ -77,7 +77,7 @@ export default  function Contact() {
     return (
     <>
     {/* set value to onChange, then value will be based on State. */}
-        <Form 
+        <Form
             onSubmit={onSubmit} 
             validate={validate} 
             render={( {handleSubmit} ) => (
@@ -87,8 +87,8 @@ export default  function Contact() {
                             name='name' 
                             render={({input, meta}) => (
                                 <div>
-                                    <label>name</label>
-                                    <input {...input} /*value={contact.name} onChange={(event) => onChange(event)}*/ />
+                                    <label className={styles.label}>name</label>
+                                    <input {...input} className={styles.input} /*value={contact.name} onChange={(event) => onChange(event)}*/ />
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
@@ -99,8 +99,8 @@ export default  function Contact() {
                             name='email' 
                             render={({input, meta}) => (
                                 <div>
-                                    <label>email</label>
-                                    <input {...input} />
+                                    <label className={styles.label}>email</label>
+                                    <input {...input} className={styles.input}/>
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
@@ -111,14 +111,14 @@ export default  function Contact() {
                             name='message' 
                             render={({input, meta}) => (
                                 <div>
-                                    <label>message</label>
-                                    <textarea {...input} />
+                                    <label className={styles.label}>message</label>
+                                    <textarea {...input} className={styles.textarea}/>
                                     {meta.touched && meta.error && <span>{meta.error}</span>}
                                 </div>
                             )}
                         />
                     </div>
-                    <button type='submit'>Send</button>
+                    <button type='submit' className={styles.contactBtn}>Send</button>
                 </form>
             )
         }/>
