@@ -1,0 +1,33 @@
+.aboutMe {
+    margin: auto;
+}
+
+.myInfo {
+    margin: 3em;
+}
+
+.myInfo p {
+    display: flex;
+    padding: 1em;
+    line-height: 1.5em;
+    padding-left: 8em;
+    padding-right: 10em;
+}
+
+.gif {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+    .myInfo p {
+        display: flex;
+        padding: 1em;
+        line-height: 1.5em;
+    }
+}

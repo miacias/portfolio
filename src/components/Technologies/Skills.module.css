@@ -1,3 +1,48 @@
+h3 {
+    text-align: center;
+    color: #fddb3a;
+}
+
+.skills {
+    /* display: flex; */
+    padding: 1%;
+}
+
 .svg {
     font-size: 4em;
+}
+
+.logoBlock {
+    padding: .5em;
+}
+
+.iconArea {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 2em;
+}
+
+.resumeInvite {
+    /* margin: auto; */
+    text-align: center;
+}
+
+.resumeBtn {
+    padding: 10px 15px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.resumeEmbed {
+    /* border-top-left-radius: 8%; */
+    /* border-bottom-left-radius: 8%; */
+    border-radius: 190% 10% 10% 190%
+}
+
+iframe {
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin: auto;
 }

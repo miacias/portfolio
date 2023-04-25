@@ -1,10 +1,26 @@
 .field {
     min-width: 400px;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     margin-bottom: 15px;
 }
 
-button {
+.contactBtn {
     padding: 10px 15px;
+    display: block;
+    margin: auto;
+    /* justify-content: center; */
+}
+
+.label {
+    margin-right: 1em;
+}
+
+.input {
+    height: 2em;
+}
+
+.textarea {
+    height: 10em;
+    min-width: 400px;
 }

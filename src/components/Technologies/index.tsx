@@ -6,9 +6,9 @@ import styles from "./Skills.module.css";
 export default function Skills() {
     return (
         <>
-            <section className='skills'>
+            <section className={styles.skills}>
                 <h2>Skills</h2>
-                <div>
+                <div className={styles.classBox}>
                     <Technologies/>
                     <Tools/>
                 </div>
