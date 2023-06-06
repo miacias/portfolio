@@ -23,9 +23,9 @@ export default  function Contact() {
         const {target} = event;
         const inputType = target.name;
         const inputValue = target.value;
-        console.log(inputType, inputValue)
+        // console.log(inputType, inputValue);
         let newContact: any = contact;
-        console.log(contact)
+        // console.log(contact);
         switch (inputType) {
             case 'name':
                 newContact.name += inputValue;
@@ -41,13 +41,13 @@ export default  function Contact() {
                 // return setContact(newContact);
 
         }
-        console.log(newContact)
+        // console.log(newContact);
         setContact(newContact);
         // return;
     }
 
     const onSubmit = (event: any) => {
-        console.log(event)
+        // console.log(event);
         emailjs.sendForm('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
             .then((response: any) => {
                 if (response.status === 200) {
@@ -74,6 +74,7 @@ export default  function Contact() {
         }
         return errors;
     };
+
     return (
     <>
     {/* set value to onChange, then value will be based on State. */}
